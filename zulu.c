@@ -56,16 +56,16 @@ void main_cycle() {
     usleep(100);
     /* printf("--- %lu\n", micros() - op_cycle_start_tm); */
     op_start();
-    op_at(0, rx_on);
-    op_at(240, rx_off);
-    op_at(240, rx_on);
-    op_at(60, rx_off);
-    op_at(60, rx_on);
-    op_at(60, rx_off);
-    op_at(60, rx_on);
-    op_at(60, rx_off);
-    op_at(60, rx_on);
-    op_at(60, rx_off);
+    toggle_rx_at(0);
+    toggle_rx_at(240);
+    toggle_rx_at(240);
+    toggle_rx_at(60);
+    toggle_rx_at(60);
+    toggle_rx_at(60);
+    toggle_rx_at(60);
+    toggle_rx_at(60);
+    toggle_rx_at(60);
+    toggle_rx_at(60);
     op_wait(540);
   }
 }
