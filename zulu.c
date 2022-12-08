@@ -75,7 +75,7 @@ void main_cycle() {
     usleep(100);
     #endif
     op_start();
-    toggle_rx_at(0);
+    op_at(0, rx_on);
     toggle_rx_at(240);
     toggle_rx_at(240);
     toggle_rx_at(60);
