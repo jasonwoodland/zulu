@@ -1,4 +1,4 @@
-TARGET = zulu
+TARGET = main
 SOURCES = $(wildcard *.c)
 OBJECTS = $(SOURCES:.c=.o)
 CC = gcc
