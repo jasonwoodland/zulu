@@ -1,13 +1,25 @@
-#include <stdio.h>
+#include <Arduino.h>
 
+#include "pins.h"
 #include "op.h"
+
+#define TX_PIN LED_BUILTIN
 
 int tx_h;
 
-void tx_off() { printf("tx_off\n"); }
-void tx_on() { printf("tx_on\n"); }
+void tx_init() {
+  tx_h = op_new_chan_handle();
+  pin_mode(TX_PIN, OUTPUT);
+}
 
-void tx_init() { tx_h = op_new_chan_handle(); }
+void tx_off() {
+  digital_write(TX_PIN, LOW);
+
+}
+
+void tx_on() {
+  digital_write(TX_PIN, HIGH);
+}
 
 void tx_tick() {
   op_at(tx_h, 0, tx_on);
